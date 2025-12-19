@@ -3,19 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Themed Layout</title>
-  <link rel="stylesheet" href="main.css">
+  <!-- CSS added inside HTML -->
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --card-color: #f2f2f2;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --card-color: #1e1e1e;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      margin: 16px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .container {
+      padding: 16px;
+    }
+    .card {
+      background-color: var(--card-color);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-<button onclick="toggleTheme()">Toggle Theme</button>
-<div class="container">
-  <div class="card">Themed Card Content</div>
-</div>
-<script>
-  function toggleTheme() {
-    const html = document.documentElement;
-    html.dataset.theme =
-      html.dataset.theme === "light" ? "dark" : "light";
-  }
-</script>
+  <button onclick="toggleTheme()">Toggle Theme</button>
+  <div class="container">
+    <div class="card">Themed Card Content</div>
+  </div>
+  <!-- JavaScript -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme =
+        html.dataset.theme === "light" ? "dark" : "light";
+    }
+  </script>
 </body>
 </html>
