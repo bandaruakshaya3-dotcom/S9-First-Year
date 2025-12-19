@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Themed Layout</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<button onclick="toggleTheme()">Toggle Theme</button>
+<div class="container">
+  <div class="card">Themed Card Content</div>
+</div>
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    html.dataset.theme =
+      html.dataset.theme === "light" ? "dark" : "light";
+  }
+</script>
+</body>
+</html>
